@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="todo-container">
+        <header class="todo-header">
+            <h1>To Do List</h1>
+            <div class="logo-placeholder">Logo</div>
+        </header>
+
+        <section class="progress-section">
+            <div class="status-bar">
+                <span class="status-label">Status</span>
+                <div class="progress-bg">
+                    <div id="progress-bar" class="progress-fg"></div>
+                </div>
+            </div>
+            <div class="done-percentage">
+                <span class="done-label">Done %</span>
+                <span id="progress-percentage" class="percentage-value">0%</span>
+            </div>
+        </section>
+
+        <section class="input-section">
+             <input type="text" id="activity-input" placeholder="할일">
+             <input type="number" id="priority-input" placeholder="순위(1-5)" min="1" max="5">
+             <button id="add-item-btn">Add</button>
+        </section>
+
+        <section class="list-section">
+            <div class="list-headers">
+                <span class="header-no">No.</span>
+                <span class="header-activity" title="할 일 내용">Activity</span>
+                <span class="header-priority" title="작업의 중요도 또는 긴급성 (1-5)">Priority</span>
+                <span class="header-check">Check</span>
+                 <span class="header-actions">Actions</span>
+            </div>
+            <ul id="todo-list">
+                <!-- Todo items will be added here -->
+            </ul>
+        </section>
+    </div>
+
+    <!-- Custom Confirmation Modal -->
+    <div id="custom-confirm-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <p id="confirm-message">정말 삭제하시겠습니까?</p>
+            <div class="modal-buttons">
+                <button id="confirm-yes-btn">예</button>
+                <button id="confirm-no-btn">아니오</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
