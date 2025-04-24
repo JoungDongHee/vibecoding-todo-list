@@ -45,6 +45,31 @@
     *   완료된 항목과 미완료 항목의 시각적 구분 강화 (배경색 변경, 텍스트 회색 처리, 활동 내용 취소선).
     *   항목 번호('No.') 고정 기능 구현 (정렬 순서가 변경되어도 초기 추가 순서 유지).
 
+7.  **Firebase Realtime Database 연동:**
+    *   기존 로컬 저장소(LocalStorage) 기반 데이터 저장 방식을 Firebase Realtime Database로 전환.
+    *   Firebase SDK 설정 및 초기화 (`firebase-config.js` 분리).
+    *   데이터 추가, 조회(실시간), 수정(체크 상태), 삭제 로직을 Firebase 연동으로 수정.
+    *   항목 번호('No.') 기능 제거 (Firebase 키를 ID로 사용).
+
+8.  **Firebase Authentication 연동 및 페이지 구성:**
+    *   Firebase Authentication (Email/Password) 연동.
+    *   로그인 페이지 (`login.html`) 생성 및 로그인 기능 구현.
+    *   회원가입 페이지 (`signup.html`) 생성 및 회원가입 기능 구현 (사용자 이름 포함).
+    *   `index.html` 헤더에 로그인 버튼 추가 및 페이지 이동 링크 설정.
+    *   로그인/회원가입 페이지 간 이동 링크 추가.
+
+9.  **사용자별 데이터 관리 및 UI 개선:**
+    *   로그인한 사용자의 고유 ID(`uid`)를 기반으로 Firebase Realtime Database 경로 분리 (`todos/{userId}`).
+    *   사용자별 할 일 목록 데이터 저장 및 조회 기능 구현.
+    *   로그인 상태에 따라 `index.html` 헤더 UI 동적 변경:
+        *   로그인 시: 사용자 환영 메시지 및 로그아웃 버튼 표시, 로그인 버튼 숨김.
+        *   로그아웃 시: 로그인 버튼 표시, 환영 메시지 및 로그아웃 버튼 숨김.
+    *   로그아웃 기능 구현.
+    *   로그인하지 않은 사용자가 `index.html` 접근 시 로그인 페이지로 리디렉션.
+
+10. **로그인 기록 저장:**
+    *   사용자 로그인 성공 시 Firebase Realtime Database의 `login_logs` 경로에 로그인 기록(사용자 ID, 이메일, 이름, 로그인 시간) 저장 기능 추가.
+
 ## 개발 도구
 
 이 애플리케이션은 AI 코드 어시스턴트인 **Cursor**와 Google의 **Gemini** 모델의 도움을 받아 개발되었습니다.
