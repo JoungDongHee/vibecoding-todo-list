@@ -1,0 +1,20 @@
+# Firebase config file
+firebase-config.js
+
+# Node modules
+node_modules/
+
+# IDE files
+.vscode/
+.idea/
+
+# Build files
+dist/
+build/
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db 
